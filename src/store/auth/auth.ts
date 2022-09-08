@@ -11,8 +11,6 @@ export const authStore = {
     },
     actions: {
         async login({ commit }, credentials: Credentials) {
-            console.log(credentials)
-            console.log('aqui eu vim')
             try {
                 const data = await api.post('/login', credentials)
                 commit('SET_USER', data)

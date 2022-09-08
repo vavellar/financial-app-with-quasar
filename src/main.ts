@@ -6,11 +6,18 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import { store } from './store'
 import { key } from './types'
+import { createRouter, createWebHistory } from 'vue-router'
+import { routes } from './routes'
 
-const myApp = createApp(App)
-myApp.use(store, key)
+const app = createApp(App)
+export const router = createRouter({
+    history: createWebHistory(),
+    routes
+})
 
-myApp.use(Quasar, {
+app.use(store, key)
+app.use(router)
+app.use(Quasar, {
     plugins: {
       Notify
     },
@@ -19,4 +26,4 @@ myApp.use(Quasar, {
     }
   })
 
-myApp.mount('#app')
+app.mount('#app')
