@@ -8,10 +8,10 @@ interface NavigationGuard {
 }
 
 export default function isAuthenticated(to: RouteLocationNormalized, from: RouteLocationNormalized, next: NavigationGuardNext) {
-    const user = store.state.auth.user
-    if(!user && to.path !== '/login') {
-        return next({ name: 'Login'})
-    }
+    // const user = store.state.auth.user
+    // if(!user && to.path !== '/login') {
+    //     return next({ name: 'Login'})
+    // }
 
     next()
 }
