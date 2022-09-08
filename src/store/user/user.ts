@@ -1,10 +1,8 @@
 import { createStore } from "vuex";
 
 export const userStore = createStore({
-    state() {
-        return {
-            name: 'victor'
-        }
+    state: {
+        name: 'Victor'
     },
     mutations: {
         changeName(state) {

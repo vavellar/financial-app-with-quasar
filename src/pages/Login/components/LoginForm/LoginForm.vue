@@ -36,42 +36,23 @@
 <script setup lang="ts">
 import { useStore } from '../../../../store/index'
 import { useQuasar } from 'quasar';
-import { ref } from 'vue';
+import { computed, ref } from 'vue';
+import { authStore } from '../../../../store/auth/auth';
+
 
 const store = useStore()
 const $q = useQuasar()
 const email = ref(null)
 const password = ref(null)
 
+
+
 function onSubmit () {
-    console.log(email.value)
-    console.log(password.value)
-    // try {
-    //     throw new Error('teste')
-    // } catch(e) {
-    //     $q.notify({
-    //         color: 'red-5',
-    //         textColor: 'white',
-    //         icon: 'warning',
-    //         message: 'Credênciais incorretas'
-    //     })
-    // }
-    // if (accept.value !== true) {
-    //     $q.notify({
-    //     color: 'red-5',
-    //     textColor: 'white',
-    //     icon: 'warning',
-    //     message: 'You need to accept the license and terms first'
-    //     })
-    // }
-    // else {
-    //     $q.notify({
-    //     color: 'green-4',
-    //     textColor: 'white',
-    //     icon: 'cloud_done',
-    //     message: 'Submitted'
-    //     })
-    // }
+    const credentials = {
+        email: email.value,
+        password: password.value
+    }
+    store.dispatch('login', credentials)
 }
 
 </script>
