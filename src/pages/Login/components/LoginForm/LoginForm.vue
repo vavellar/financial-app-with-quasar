@@ -37,7 +37,6 @@
 import { useStore } from '../../../../store/index'
 import { useQuasar } from 'quasar';
 import { computed, ref } from 'vue';
-import { authStore } from '../../../../store/auth/auth';
 
 
 const store = useStore()

@@ -6,8 +6,8 @@
                     <Menu @changeView="setView" :view="currentView"/>
                 </div>
             </div>
-            <div class="col-8 window-height">
-                <Dashboard v-if="currentView === 'dashboard'"/>
+            <div class="col-8 window-height q-pa-lg">
+                <Dashboard v-if="currentView === 'home'"/>
                 <Transactions v-if="currentView === 'transactions'"/>
             </div>
             <div class="col bg-yellow window-height">

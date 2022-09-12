@@ -1,12 +1,10 @@
 import { InjectionKey } from "vue"
 import { Store } from "vuex"
-
-interface Auth {
-    user: any
-}
-
+import { AuthStore } from "./auth.types"
+import { TransactionsStore } from "./transactions.types"
 export interface State {
-    auth: Auth
+    auth: AuthStore
+    transactions: TransactionsStore
 }
 
 export const key: InjectionKey<Store<State>> = Symbol()
